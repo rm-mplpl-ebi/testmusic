@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <style>
+      p { clear: both; }
+    </style>
+    <script src="../audiojs/audio.min.js"></script>
+    <script>
+      audiojs.events.ready(function() {
+        var as = audiojs.createAll();
+      });
+    </script>
+  </head>
+  <body>
+      <h1>正しい音源だと思う方にチェックを入れてくださいその２</h1>
+      <p>音源1<input type="radio" name="music" value="1-1">
+      <audio src="./mp3/musictest1-1.mp3" controls></audio></p>
+    
+      <p>音源2<input type="radio" name="music" value="1-2">
+      <audio src="./mp3/musictest1-2.mp3" controls></audio></p>
+  </body>
+</html>
