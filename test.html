@@ -35,9 +35,6 @@ function add_test()
             type:"POST",		// 使用するHTTPメソッド
             data: JSON.stringify(output),
             //data: '{"request": "memory_result", "number":"1000", "json": }', // 送信するデータ
-            xhrFields: {
-            withCredentials: true
-            },
             contentType: 'application/json',
             dataType:"json", // 応答のデータの種類 
                             // (xml/html/script/json/jsonp/text)
