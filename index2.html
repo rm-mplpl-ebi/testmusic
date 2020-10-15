@@ -6,30 +6,25 @@
     <style>
       p { clear: both; }
     </style>
-    <script src="./audiojs/audio.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="../audiojs/audio.min.js"></script>
     <script>
       audiojs.events.ready(function() {
         var as = audiojs.createAll();
       });
-      
-      function debug_out(str){
-        console.log( str );
-      }
 
       function add_test()
       {
           let data = {
-            hoge: "hoghogehoge1",
-            array: [
-                { element: 1, name: "test1111" },
+            name: "hogeta_hogetarou",
+            result: [
+                { element: document.getElementById("test1"), name: "test1111" },
                 { element: 2, name: "test2" }
             ]
           };
 
           let output = {
             request: "memory_result",
-            number: 1005,
+            number: 1000,
             json: data
           };
 
@@ -37,7 +32,7 @@
 
         $.ajax({
             //url:"/kani/php/get.php", // 通信先のURL
-            url:"https://bbled.org/kani/crest_php/add.php", // 通信先のURL
+            url:"https://bbled.org/kani/crest_php/test.php", // 通信先のURL
             type:"POST",		// 使用するHTTPメソッド
             data: JSON.stringify(output),
             //data: '{"request": "memory_result", "number":"1000", "json": }', // 送信するデータ
@@ -65,13 +60,13 @@
   </head>
   <body>
       <h1>正しい音源だと思う方にチェックを入れてください</h1>
-      <form>
+      <form id="test1">
       <p>音源1<input type="radio" name="music1" value="1-1" required>
       <audio src="./mp3/musictest1-1.mp3" controls></audio></p>
     
       <p>音源2<input type="radio" name="music1" value="1-2">
       <audio src="./mp3/musictest1-2.mp3" controls></audio></p>
-      <input type="button" onclick="add_test();" value="次へ">
-    </form>
+      </form>
+      <input type="button" onclick="location.href='./index2.html';add_test();" value="次へ">
   </body>
 </html>
