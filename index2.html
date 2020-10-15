@@ -19,17 +19,22 @@
 
       function add_test()
       {
-        var flag = false;
-        for(var i=0; i<document.getElementsByName("music1").length-1; i++){
-          if(document.test1.music1[i].checked){
-            flag = true;
+        var flag1 = false;
+        var flag2 = false;
+        const select1 = document.getElementById("mus1");
+        const select2 = document.getElementById("mus2");
+
+          if(select1.checked){
+            flag1 = true;
+          }else if(select2.checked){
+            flag2 = true;
           }
-        }
+        
 
           let data = {
             name: "hogeta_hogetarou",
             result: [
-                { element: document.getElementById("mus1").value, name: flag },
+                { element: document.getElementById("mus1").value, name: flag1 },
                 { element: document.getElementById("mus2").value, name: "test2" }
             ]
           };
