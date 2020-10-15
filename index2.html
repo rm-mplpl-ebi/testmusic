@@ -17,12 +17,22 @@
         console.log( str );
       }
 
+      function check_button(){
+        var flag = false;
+        for(var i=0; i<document.test1.elements.length; i++){
+          if(document.test1.elements[i].checked){
+            flag = true;
+          }
+        }
+
+      }
+
       function add_test()
       {
           let data = {
             name: "hogeta_hogetarou",
             result: [
-                { element: document.getElementById("test1").value, name: "test1111" },
+                { element: document.getElementById("mus1").value, name: flag },
                 { element: document.getElementById("mus2").value, name: "test2" }
             ]
           };
