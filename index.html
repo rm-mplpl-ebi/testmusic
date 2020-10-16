@@ -6,17 +6,27 @@
     <style>
       p { clear: both; }
     </style>
-    <script src="../audiojs/audio.min.js"></script>
+    <script src="./audiojs/audio.min.js"></script>
     <script>
       audiojs.events.ready(function() {
         var as = audiojs.createAll();
       });
+      var n = 0;
+      function countSecond() {
+	      n++;
+        document.getElementById("startAlert").innerHTML = "3秒後に回答のページへ遷移します";
+        document.getElementById('sound-file').play();
+      }
     </script>
   </head>
   <body>
       <h1>以下の音源を1回だけ再生してできるかぎりおぼえてください(1問目)</h1>
       <p>音源
-      <audio src="./mp3/musictest1-1.mp3" controls></audio></p>
+      <audio id="sound-file" preload="auto" src="./mp3/musictest1-1.mp3"></audio></p>
+
+      <div id="startAlert">
+        <button onclick="setTimeout('countSecond()',3000)">クリックすると3秒後に音源を再生します</button>
+      </div>
    
     　<input type="button" onclick="location.href='./index2.html'" value="次へ">
   </body>
