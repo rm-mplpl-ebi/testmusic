@@ -6,18 +6,29 @@
     <style>
       p { clear: both; }
     </style>
-    <script src="../audiojs/audio.min.js"></script>
+    <script src="./audiojs/audio.min.js"></script>
     <script>
-      audiojs.events.ready(function() {
-        var as = audiojs.createAll();
-      });
+    
+      var n = 0;
+      function countSecond() {
+	      n++;
+        document.getElementById("startAlert").innerHTML = "再生終了後に自動で回答のページへ移動します";
+        document.getElementById('sound-file').play();
+        setTimeout(nextpages, 16000)
+      }
+
+      function nextpages(){
+        document.location.href = "https://rm-mplpl-ebi.github.io/testmusic/index4.html"
+      }
     </script>
   </head>
   <body>
-      <h1>以下の音源を1回だけ再生してできるかぎりおぼえてください(2問目)</h1>
+      <h1>以下の音源を再生して，できるかぎりおぼえてください(2問目)</h1>
       <p>音源
-      <audio src="./mp3/musictest2-1.mp3" controls></audio></p>
-   
-    　<input type="button" onclick="location.href='./index4.html'" value="次へ">
+      <audio id="sound-file" preload="auto" src="./mp3/musictest2-1.mp3"></audio></p>
+
+      <div id="startAlert">
+        <button onclick="setTimeout('countSecond()',3000);">ここをクリックすると3秒後に音源を再生します</button>
+      </div>
   </body>
 </html>
