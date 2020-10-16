@@ -14,11 +14,12 @@
 	      n++;
         document.getElementById("startAlert").innerHTML = "3秒後に回答のページへ遷移します";
         document.getElementById('sound-file').play();
-        function nextpages(){
-          document.location.href = "https://rm-mplpl-ebi.github.io/testmusic/index2.html";
-          setTimeout(nextpages, 12000);
-        }
         nextpages();
+      }
+
+      function nextpages(){
+        document.location.href = "https://rm-mplpl-ebi.github.io/testmusic/index2.html";
+        setTimeout(nextpages, 12000);
       }
     </script>
   </head>
