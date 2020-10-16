@@ -19,23 +19,35 @@
 
       function add_test()
       {
-        var flag1 = false;
-        var flag2 = false;
+        var flag = {
+          flag1: false,
+          flag2: false,
+          flag3: false,
+          flag4: false,
+        }
         const select1 = document.getElementById("mus1");
         const select2 = document.getElementById("mus2");
+        const select3 = document.getElementById("mus3");
+        const select4 = document.getElementById("mus4");
 
           if(select1.checked){
-            flag1 = true;
+            flag.flag1 = true;
           }else if(select2.checked){
-            flag2 = true;
+            flag.flag2 = true;
+          }else if(select3.checked){
+            flag.flag3 = true;
+          }else if(select4.checked){
+            flag.flag4 = true;
           }
         
 
           let data = {
             name: "hogeta_hogetarou",
             result: [
-                { musictest: document.getElementById("mus1").value, isChecked: flag1 },
-                { musictest: document.getElementById("mus2").value, isChecked: flag2 }
+                { musictest: document.getElementById("mus1").value, isChecked: flag.flag1 },
+                { musictest: document.getElementById("mus2").value, isChecked: flag.flag2 },
+                { musictest: document.getElementById("mus3").value, isChecked: flag.flag3 },
+                { musictest: document.getElementById("mus4").value, isChecked: flag.flag4 }
             ]
           };
 
@@ -83,6 +95,12 @@
     
       <p>音源2<input type="radio" id="mus2" name="music1" value="1-2">
       <audio src="./mp3/musictest1-2.mp3" controls></audio></p>
+
+      <p>音源3<input type="radio" id="mus3" name="music1" value="1-3">
+        <audio src="./mp3/musictest1-3.mp3" controls></audio></p>
+
+      <p>音源4<input type="radio" id="mus4" name="music1" value="1-4">
+          <audio src="./mp3/musictest1-4.mp3" controls></audio></p>
       </form>
       <input type="button" onclick="add_test();" value="次へ">
   </body>
