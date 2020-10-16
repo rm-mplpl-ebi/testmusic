@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+    <style>
+      p { clear: both; }
+    </style>
+    <script src="./audiojs/audio.min.js"></script>
+    <script>
+    
+      var n = 0;
+      function countSecond() {
+	      n++;
+        document.getElementById("startAlert").innerHTML = "再生終了後に自動で回答のページへ移動します";
+        document.getElementById('sound-file').play();
+        setTimeout(nextpages, 13000)
+      }
+
+      function nextpages(){
+        document.location.href = "https://rm-mplpl-ebi.github.io/testmusic/index10.html"
+      }
+    </script>
+  </head>
+  <body>
+      <h1>以下の音源を再生して，できるかぎりおぼえてください(5問目)</h1>
+      <p>音源
+      <audio id="sound-file" preload="auto" src="./mp3/musictest5-1.mp3"></audio></p>
+
+      <div id="startAlert">
+        <button onclick="setTimeout('countSecond()',3000);">ここをクリックすると3秒後に音源を再生します</button>
+      </div>
+  </body>
+</html>
