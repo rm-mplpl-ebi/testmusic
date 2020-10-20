@@ -6,10 +6,12 @@
     <style>
       p { clear: both; }
     </style>
+    <script src="./audiojs/audio.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script>
+      
       function debug_out(str){
-        console.log( str );
+        console.log(str);
       }
 
       function add_test()
@@ -52,7 +54,7 @@
             json: data
           };
 
-        debug_out( JSON.stringify(output));
+        debug_out(JSON.stringify(output));
 
         $.ajax({
             //url:"/kani/php/get.php", // 通信先のURL
@@ -87,16 +89,16 @@
   <body>
       <h1>先ほど聞いた音源と同じだと思う音源1つにチェックを入れてください</h1>
       <form id="test1">
-      <p>音源1<input type="radio" id="mus1" name="music1" value="1-1" required>
+      <p>音源1<input type="radio" id="mus1" name="music2" value="2-2" required>
       <audio src="./mp3/musictest1-1.mp3" controls></audio></p>
     
-      <p>音源2<input type="radio" id="mus2" name="music1" value="1-2">
+      <p>音源2<input type="radio" id="mus2" name="music2" value="2-4">
       <audio src="./mp3/musictest1-2.mp3" controls></audio></p>
 
-      <p>音源3<input type="radio" id="mus3" name="music1" value="1-3">
+      <p>音源3<input type="radio" id="mus3" name="music2" value="2-3">
         <audio src="./mp3/musictest1-3.mp3" controls></audio></p>
 
-      <p>音源4<input type="radio" id="mus4" name="music1" value="1-4">
+      <p>音源4<input type="radio" id="mus4" name="music2" value="2-1">
           <audio src="./mp3/musictest1-4.mp3" controls></audio></p>
       </form>
       <input type="button" onclick="add_test();" value="次へ">
