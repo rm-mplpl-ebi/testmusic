@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
     <link rel="stylesheet" href="/stylesheets/style.css"><meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
     <body>
         <h2>Finished</h2>
@@ -17,9 +18,56 @@
                     r += c[Math.floor(Math.random() * cl)];
                 }
             document.getElementById("password").value = r;
+            add_test();
             }
+
+            function debug_out(str){
+            console.log( str );
+            }
+
+            function add_test(){
+            let data = {
+            name: "hogeta_hogetarou",
+            surveycode: [
+                {musictest: document.getElementById("password").value}
+            ]
+            };
+
+            let output = {
+            request: "memory_result",
+            number: 1005,
+            json: data
+            };
+
+            debug_out( JSON.stringify(output));
+
+            $.ajax({
+            //url:"/kani/php/get.php", // 通信先のURL
+            url:"https://bbled.org/kani/crest_php/add.php", // 通信先のURL
+            type:"POST",		// 使用するHTTPメソッド
+            data: JSON.stringify(output),
+            //data: '{"request": "memory_result", "number":"1000", "json": }', // 送信するデータ
+            contentType: 'application/json',
+            dataType:"json", // 応答のデータの種類 
+                            // (xml/html/script/json/jsonp/text)
+            timespan:10000 		// 通信のタイムアウトの設定(ミリ秒)
+        }).done(function(data1,textStatus,jqXHR) {
+            debug_out(data1);
+            debug_out(textStatus); //例：error
+            debug_out(jqXHR.status); //例：404
+    
+        }).fail(function(jqXHR, textStatus, errorThrown ) {
+            debug_out(jqXHR.status); //例：404
+            debug_out(textStatus); //例：error
+            debug_out(errorThrown); //例：NOT FOUND
+    
+                    // 7. alwaysは、成功/失敗に関わらず実行される
+        }).always(function(){
+            debug_out("complete test");
+          });
+      }
         </script>
-        
+      
         <form action="" method="POST">
         Your Survey Code <input type="text" id="password">
         <input type="button" value="Generate a Survey Code" onclick="random(8)">
