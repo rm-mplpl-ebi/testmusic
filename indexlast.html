@@ -1,11 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <title>Test</title>
-  
-  </head>
-  <body>
-      <h1>おしまい(ありがとうございました)</h1>
-  </body>
-</html>
+<head>
+    <link rel="stylesheet" href="/stylesheets/style.css"><meta charset="utf-8">
+</head>
+    <body>
+        <h2>Finished</h2>
+        <p></p>
+        <div id="message">Thank you for your corporation.</div>
+        <p></p>
+        <script>
+            function random(len) {
+                var l  = len;           // とりあえず8けたで
+                var c  = "abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ012345679"; // 生成する文字列に含める文字
+                var cl = c.length;
+                var r  = "";
+                for (var i = 0; i < l; i++) {
+                    r += c[Math.floor(Math.random() * cl)];
+                }
+            document.getElementById("password").value = r;
+            }
+        </script>
+        
+        <form action="" method="POST">
+        Your Survey Code <input type="text" id="password">
+        <input type="button" value="Generate a Survey Code" onclick="random(8)">
+        </form>
+        <p></p>
+    </body>
