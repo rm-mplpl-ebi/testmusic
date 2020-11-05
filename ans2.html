@@ -11,7 +11,7 @@
     <script>
       
       function debug_out(str){
-        console.log( str );
+        console.log(str);
       }
 
       function add_test()
@@ -37,7 +37,6 @@
             flag.flag4 = true;
           }
         
-
           let data = {
             name: "hogeta_hogetarou",
             result: [
@@ -54,7 +53,7 @@
             json: data
           };
 
-        debug_out( JSON.stringify(output));
+        debug_out(JSON.stringify(output));
 
         $.ajax({
             //url:"/kani/php/get.php", // 通信先のURL
@@ -70,6 +69,7 @@
             debug_out(data1);
             debug_out(textStatus); //例：error
             debug_out(jqXHR.status); //例：404
+            document.location.href = "./index3.html"; //成功後に遷移するようにしないと，送信前に遷移してPOST失敗する場合あり
     
         }).fail(function(jqXHR, textStatus, errorThrown ) {
             debug_out(jqXHR.status); //例：404
@@ -80,8 +80,6 @@
         }).always(function(){
             debug_out("complete test");
           });
-
-          document.location.href = "./index3.html";
       }
 
     </script>
@@ -100,7 +98,7 @@
 
       <p>Music4<input type="radio" id="mus4" name="music2" value="2-1">
           <audio src="./mp3/musictest2-1.mp3" controls></audio></p>
-      </form>
-      <input type="button" onclick="add_test();" value="NEXT">
+       <input type="button" onclick="add_test();" value="NEXT">
+    </form>
   </body>
 </html>
