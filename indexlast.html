@@ -28,8 +28,9 @@
             }
 
             function add_test(){
+                var Answer_Id = document.cookie.split(';')[0];
             let data = {
-            name: "hogeta_hogetarou",
+            AnswerID : Answer_Id,
             surveycode: [
                 {musictest: document.getElementById("password").value}
             ]
