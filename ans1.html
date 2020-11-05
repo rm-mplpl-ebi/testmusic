@@ -71,6 +71,7 @@
             debug_out(data1);
             debug_out(textStatus); //例：error
             debug_out(jqXHR.status); //例：404
+            document.location.href = "./index2.html";
     
         }).fail(function(jqXHR, textStatus, errorThrown ) {
             debug_out(jqXHR.status); //例：404
@@ -81,7 +82,6 @@
         }).always(function(){
             debug_out("complete test");
           });
-          //document.location.href = "./index2.html";
       }
 
     </script>
