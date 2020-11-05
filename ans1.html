@@ -71,7 +71,7 @@
             debug_out(data1);
             debug_out(textStatus); //例：error
             debug_out(jqXHR.status); //例：404
-            document.location.href = "./index2.html";
+            document.location.href = "./index2.html"; //成功後に遷移するようにしないと，送信前に遷移してPOST失敗する場合あり
     
         }).fail(function(jqXHR, textStatus, errorThrown ) {
             debug_out(jqXHR.status); //例：404
