@@ -8,6 +8,7 @@
     </style>
     <script src="./audiojs/audio.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./postdata.js"></script>
     <script>
       
       function debug_out(str){
@@ -79,7 +80,11 @@
             debug_out(textStatus); //例：error
             debug_out(jqXHR.status); //例：404
             globalAnser_Id = Answer_Id;
+            if(flag.flag1 == true || flag.flag2 == true || flag.flag3 == true || flag.flag4 == true){
             document.location.href = "./index2.html";
+            }else{
+              alert("Please slect something");
+            }
     
         }).fail(function(jqXHR, textStatus, errorThrown ) {
             debug_out(jqXHR.status); //例：404
