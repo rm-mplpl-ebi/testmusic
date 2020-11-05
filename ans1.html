@@ -11,7 +11,7 @@
     <script>
       
       function debug_out(str){
-        console.log(str);
+        console.log( str );
       }
 
       function add_test()
@@ -36,9 +36,17 @@
           }else if(select4.checked){
             flag.flag4 = true;
           }
+        var l  = len;           // とりあえず8けたで
+        var c  = "abcdefghjkmnpqrstuvwxyzABCDEFGHJKLMNPQRSTUVWXYZ012345679"; // 生成する文字列に含める文字
+        var cl = c.length;
+        var r  = "";
+        for (var i = 0; i < l; i++) {
+            r += c[Math.floor(Math.random() * cl)];
+        }
         
+
           let data = {
-            name: "hogeta_hogetarou",
+            name: r,
             result: [
                 { musictest: document.getElementById("mus1").value, isChecked: flag.flag1 },
                 { musictest: document.getElementById("mus2").value, isChecked: flag.flag2 },
@@ -53,7 +61,7 @@
             json: data
           };
 
-        debug_out(JSON.stringify(output));
+        debug_out( JSON.stringify(output));
 
         $.ajax({
             //url:"/kani/php/get.php", // 通信先のURL
@@ -69,7 +77,6 @@
             debug_out(data1);
             debug_out(textStatus); //例：error
             debug_out(jqXHR.status); //例：404
-            document.location.href = "./index2.html"; //成功後に遷移するようにしないと，送信前に遷移してPOST失敗する場合あり
     
         }).fail(function(jqXHR, textStatus, errorThrown ) {
             debug_out(jqXHR.status); //例：404
@@ -80,6 +87,8 @@
         }).always(function(){
             debug_out("complete test");
           });
+
+          document.location.href = "./index3.html";
       }
 
     </script>
@@ -87,18 +96,18 @@
   <body>
       <h1>Check the one that you think is the same as the one you just heard</h1>
       <form id="test1">
-      <p>Music1<input type="radio" id="mus1" name="music1" value="1-1" required>
-      <audio src="./mp3/musictest1-1.mp3" controls></audio></p>
+      <p>Music1<input type="radio" id="mus1" name="music2" value="2-2" required>
+      <audio src="./mp3/musictest2-2.mp3" controls></audio></p>
     
-      <p>Music2<input type="radio" id="mus2" name="music1" value="1-2">
-      <audio src="./mp3/musictest1-2.mp3" controls></audio></p>
+      <p>Music2<input type="radio" id="mus2" name="music2" value="2-4">
+      <audio src="./mp3/musictest2-4.mp3" controls></audio></p>
 
-      <p>Music3<input type="radio" id="mus3" name="music1" value="1-3">
-        <audio src="./mp3/musictest1-3.mp3" controls></audio></p>
+      <p>Music3<input type="radio" id="mus3" name="music2" value="2-3">
+        <audio src="./mp3/musictest2-3.mp3" controls></audio></p>
 
-      <p>Music4<input type="radio" id="mus4" name="music1" value="1-4">
-          <audio src="./mp3/musictest1-4.mp3" controls></audio></p>
-       <input type="button" onclick="add_test();" value="NEXT">
-    </form>
+      <p>Music4<input type="radio" id="mus4" name="music2" value="2-1">
+          <audio src="./mp3/musictest2-1.mp3" controls></audio></p>
+      </form>
+      <input type="button" onclick="add_test();" value="NEXT">
   </body>
 </html>
