@@ -1,1 +1,1 @@
-
+var globalAnser_Id;
