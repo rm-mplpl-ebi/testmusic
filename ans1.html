@@ -41,12 +41,12 @@
         var cl = c.length;
         var r  = "";
         for (var i = 0; i < l; i++) {
-            r += c[Math.floor(Math.random() * cl)];
+            Answer_Id += c[Math.floor(Math.random() * cl)];
         }
         
 
           let data = {
-            name: r,
+            AnswerID: Answer_Id,
             result: [
                 { musictest: document.getElementById("mus1").value, isChecked: flag.flag1 },
                 { musictest: document.getElementById("mus2").value, isChecked: flag.flag2 },
