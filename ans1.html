@@ -8,6 +8,7 @@
     </style>
     <script src="./audiojs/audio.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./postdata.js"></script>
     <script>
       
       function debug_out(str){
@@ -43,6 +44,7 @@
         for (var i = 0; i < l; i++) {
             Answer_Id += c[Math.floor(Math.random() * cl)];
         }
+        document.cookie = Answer_Id;
         
 
           let data = {
@@ -77,6 +79,7 @@
             debug_out(data1);
             debug_out(textStatus); //例：error
             debug_out(jqXHR.status); //例：404
+            globalAnser_Id = Answer_Id;
             document.location.href = "./index2.html";
     
         }).fail(function(jqXHR, textStatus, errorThrown ) {
