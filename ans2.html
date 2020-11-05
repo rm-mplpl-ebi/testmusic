@@ -8,6 +8,7 @@
     </style>
     <script src="./audiojs/audio.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./postdata.js"></script>
     <script>
       
       function debug_out(str){
@@ -38,7 +39,7 @@
           }
         
           let data = {
-            name: "hogeta_hogetarou",
+            name: globalAnser_Id,
             result: [
                 { musictest: document.getElementById("mus1").value, isChecked: flag.flag1 },
                 { musictest: document.getElementById("mus2").value, isChecked: flag.flag2 },
