@@ -26,6 +26,11 @@
       <p>Music
       <audio id="sound-file" preload="auto" src="./mp3/musictest1-1.mp3"></audio></p>
 
+      <form action="hidden2.php" method="POST">
+        <input type="text" minlength="4" maxlength="8" name="yourid">
+        <input type="submit" value="WorkerID">
+      </form>
+
       <div id="startAlert">
         <button onclick="setTimeout('countSecond()',3000);">Click here to play the soundtrack(it will play in 3 seconds)</button>
       </div>
