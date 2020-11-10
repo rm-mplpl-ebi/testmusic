@@ -12,7 +12,7 @@
       var n = 0;
       function countSecond() {
 	      n++;
-        document.getElementById("startAlert").innerHTML = "You will be taken to the answer page automatically after playback ends.";
+        document.getElementById("startAlert").innerHTML = "再生終了後，3秒経過すると自動的に回答のページへ遷移します";
         document.getElementById('sound-file').play();
         setTimeout(nextpages, 11000)
       }
@@ -23,12 +23,12 @@
     </script>
   </head>
   <body>
-      <h1>Question2:Listen to the following sounds and memorize them to the best of your ability.</h1>
+      <h1>問題2：以下の音源を1回だけ再生してできるかぎりおぼえてください</h1>
       <p>Music
       <audio id="sound-file" preload="auto" src="./mp3/musictest2-1.mp3"></audio></p>
 
       <div id="startAlert">
-        <button onclick="setTimeout('countSecond()',3000);">Click here to play the soundtrack(it will play in 3 seconds)</button>
+        <button onclick="setTimeout('countSecond()',3000);">再生するにはこちらをクリック(クリックから3秒後に再生されます)</button>
       </div>
   </body>
 </html>
